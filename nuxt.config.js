@@ -71,7 +71,6 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/auth',
   ],
-
   axios: {
     // baseURL: 'http://extranet/api'
     baseURL: 'https://extranet.more-otdih.online/api'
