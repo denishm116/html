@@ -17,7 +17,7 @@
     },
   methods: {
     async test() {
-        let result = await this.$axios.get('https://extranet.more-otdih.online/api/test')
+        let result = await this.$axios.get('https://engine.more-otdih.online/api/test')
       this.res = result.data.data
 console.log(result.data.data)
 
