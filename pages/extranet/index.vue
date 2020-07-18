@@ -2,6 +2,7 @@
 
   <div>
     <h1>Extranet Index</h1>
+    <h2>{{res}}</h2>
   </div>
 
 
@@ -9,7 +10,23 @@
 
 <script>
   export default {
+    data() {
+      return {
+        res: ''
+      }
+    },
+  methods: {
+    async test() {
+        let result = await this.$axios.get('http://extranet/api/test')
+      this.res = result.data.data
+console.log(result.data.data)
 
+    }
+
+    },
+    mounted() {
+     this.test()
+    }
   }
 </script>
 
@@ -24,16 +41,15 @@
   }
 
   .title {
-    font-family:
-      'Quicksand',
-      'Source Sans Pro',
-      -apple-system,
-      BlinkMacSystemFont,
-      'Segoe UI',
-      Roboto,
-      'Helvetica Neue',
-      Arial,
-      sans-serif;
+    font-family: 'Quicksand',
+    'Source Sans Pro',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
     display: block;
     font-weight: 300;
     font-size: 100px;
