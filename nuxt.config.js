@@ -62,7 +62,7 @@ export default {
 
     '@nuxtjs/vuetify',
 
-    ['@nuxtjs/vuetify', { /* module options */}]
+    // ['@nuxtjs/vuetify', { /* module options */}]
   ],
 
   modules: [
