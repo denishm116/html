@@ -1,62 +1,61 @@
 <template>
-  <div>
-    <Nuxt />
-  </div>
+  <v-app app>
+<div>
+
+  <transition name="slide-fade" mode="out-in">
+    <auth v-if="$store.getters['authentication/authenticationWindow']"></auth>
+  </transition>
+</div>
+
+   <navbar></navbar>
+
+
+    <sidebar></sidebar>
+    <v-main app>
+      <nuxt/>
+    </v-main>
+
+    <v-footer app>
+      <span>&copy; {{ new Date().getFullYear() }}</span>
+    </v-footer>
+
+
+  </v-app>
+
 </template>
+<script>
+  import Navbar from "@/components/extranet/Navbar";
+  import Sidebar from "../components/extranet/Sidebar";
+  import Auth from "../components/auth/Auth";
 
-<style>
-html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
+  export default {
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
+    data() {
+      return {
+        login: false,
+        drawer: true
+      }
+    },
+    created() {
+      // this.$vuetify.theme.dark = true
+    },
+    components: {
+      Navbar, Sidebar, Auth
+    },
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
+  }
+</script>
+<style scoped>
+  .slide-fade-enter-active {
+    transition: all .3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+    /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateY(-100px);
+opacity: 0;
+  }
 </style>
