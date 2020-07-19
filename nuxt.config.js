@@ -70,8 +70,16 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/auth',
-    ['@nuxtjs/proxy', {pathRewrite: {'^/api': '/'}}]
+    '@nuxtjs/proxy'
   ],
+  // proxy: {
+  //   '/api': {
+  //     target: 'https://extranet.more-otdih.online',
+  //     pathRewrite: {
+  //       '^/api' : '/'
+  //     }
+  //   }
+  // },
 
   axios:
     {
