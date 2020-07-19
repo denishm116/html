@@ -72,14 +72,14 @@ export default {
     '@nuxtjs/auth',
     '@nuxtjs/proxy'
   ],
-  // proxy: {
-  //   '/api': {
-  //     target: 'https://extranet.more-otdih.online',
-  //     pathRewrite: {
-  //       '^/api' : '/'
-  //     }
-  //   }
-  // },
+  proxy: {
+    '/api': {
+      target: 'https://more-otdih.online',
+      pathRewrite: {
+        '^/api' : '/'
+      }
+    }
+  },
 
   axios:
     {
