@@ -85,7 +85,7 @@ export default {
   axios:
     {
       // baseURL: 'http://extranet/api'
-      proxy: true,
+      proxy: false,
       baseURL: 'https://extranet.more-otdih.online/api'
     }
   ,
