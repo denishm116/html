@@ -77,7 +77,8 @@ export default {
       target: 'https://more-otdih.online',
       pathRewrite: {
         '^/api' : '/'
-      }
+      },
+      changeOrigin: true
     }
   },
 
