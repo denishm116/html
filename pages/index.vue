@@ -15,7 +15,6 @@
 
     <v-card-text class="text--primary">
       <div>Whitehaven Beach</div>
-
       {{$auth.$state.loggedIn}}
     </v-card-text>
 
