@@ -73,14 +73,21 @@ export default {
     '@nuxtjs/proxy',
   ],
   proxy:
-    [
-      'https://extranet.more-otdih.online/'
-    ]
+    {
+      '/api': {
+        target:  'https://more-otdih.online/',
+        pathRewrite: {
+          '^/api' : '/'
+        }
+      }
+    }
+
+
   ,
 
   axios: {
-    baseURL: 'http://localhost:3000/'
-    // baseURL: 'https://extranet.more-otdih.online/api'
+    // baseURL: 'http://extranet/api'
+    baseURL: 'https://extranet.more-otdih.online/api'
   },
 
   build: {}
