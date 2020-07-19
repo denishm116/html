@@ -75,7 +75,7 @@ export default {
   proxy:
     {
       '/api': {
-        target:  'https://more-otdih.online/',
+        target:  'https://extranet.more-otdih.online/api',
         pathRewrite: {
           '^/api' : '/'
         }
