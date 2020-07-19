@@ -70,10 +70,17 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/auth',
+    '@nuxtjs/proxy',
   ],
+  proxy:
+    [
+      'https://extranet.more-otdih.online/'
+    ]
+  ,
+
   axios: {
-    // baseURL: 'http://extranet/api'
-    baseURL: 'https://extranet.more-otdih.online/api'
+    baseURL: 'http://localhost:3000/'
+    // baseURL: 'https://extranet.more-otdih.online/api'
   },
 
   build: {}
