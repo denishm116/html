@@ -48,7 +48,7 @@ export default {
       }
     },
     redirect: {
-      login: '/',
+      login: '/auth/login',
       home: '/',
     },
     plugins: [
@@ -60,9 +60,8 @@ export default {
 
   buildModules: [
 
-    '@nuxtjs/vuetify',
 
-    // ['@nuxtjs/vuetify', { /* module options */}]
+    ['@nuxtjs/vuetify', { /* module options */}]
   ],
 
   modules: [
@@ -70,25 +69,15 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/auth',
-    // '@nuxtjs/proxy'
+
   ],
 
 
   axios:
     {
-      // baseURL: 'http://extranet/api',
-      // proxy: true,
       baseURL: 'https://extranet.more-otdih.online/api'
     }
   ,
-
-  proxy: {
-    // '/api':'http://extranet/',
-
-    // '/api': 'https://extranet.more-otdih.online/api/',
-    // '/api': 'http://extranet/api/',
-
-  },
 
   build: {}
 }
